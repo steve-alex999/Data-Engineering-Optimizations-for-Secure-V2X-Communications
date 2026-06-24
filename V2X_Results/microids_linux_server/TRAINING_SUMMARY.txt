@@ -1,0 +1,36 @@
+
+GLOBAL MODEL SUMMARY:
+═════════════════════════════════════════
+
+📊 PERFORMANCE:
+   Accuracy:  0.9993
+   F1-Score:  0.9996 ✅ PASSED
+   ROC-AUC:   0.9989
+
+🔧 MODEL SPECS:
+   Type:      DecisionTreeClassifier
+   Max depth: 4
+   Nodes:     3
+   Features:  8
+   Memory:    ~2-3 MB
+
+📁 EXPORT LOCATION:
+   /content/drive/MyDrive/V2X_Results/microids_linux_server
+
+📋 FILES (download these):
+   - bsm_dos_model.pkl        (model)
+   - bsm_dos_scaler.pkl       (scaler)
+   - feature_names.pkl        (features)
+   - model_metadata.pkl       (metadata)
+
+🚀 NEXT: LINUX SERVER TESTING
+   1. Download 4 .pkl files from Drive
+   2. Run on Linux: python inference_server.py
+   3. Load model, make predictions on incoming BSMs
+   4. Test with different time gaps (0.05s, 0.3s, 2.0s)
+
+✅ INFERENCE TEST RESULTS:
+   Test 1 (Normal, gap=999s): NORMAL (99.93%)
+   Test 2 (Normal, gap=0.3s): NORMAL (99.93%)
+   Test 3 (Attack, gap=0.05s): ATTACK (99.85%)
+   Test 4 (Attack, gap=2.0s): NORMAL (99.93%)

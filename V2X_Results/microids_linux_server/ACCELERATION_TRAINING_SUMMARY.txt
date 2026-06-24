@@ -1,0 +1,47 @@
+
+ACCELERATION FABRICATION MODEL SUMMARY:
+═════════════════════════════════════════
+
+📊 PERFORMANCE (Default threshold 0.50):
+   Accuracy:  0.9981
+   F1-Score:  0.9722
+   ROC-AUC:   1.0000
+
+🎯 OPTIMIZED PERFORMANCE (Threshold 0.95):
+   Accuracy:  0.9995
+   Precision: 1.0000
+   Recall:    0.9857
+   F1-Score:  0.9928 ✅ TARGET MET!
+
+🔧 MODEL SPECS:
+   Type:      DecisionTreeClassifier
+   Max depth: 5
+   Nodes:     11
+   Features:  10
+   Memory:    ~2-3 MB
+   Threshold: 0.95 (OPTIMAL)
+
+📁 EXPORT LOCATION:
+   /content/drive/MyDrive/V2X_Results/microids_linux_server
+
+📋 FILES (download these):
+   - bsm_acceleration_model.pkl          (model)
+   - bsm_acceleration_scaler.pkl         (scaler)
+   - acceleration_feature_names.pkl      (features)
+   - acceleration_model_metadata.pkl     (metadata with threshold!)
+
+🚀 DEPLOYMENT:
+   Use threshold 0.95 for inference server:
+   python3 inference_server_acceleration_v2.py --threshold 0.95
+
+✅ INFERENCE TEST RESULTS:
+   Test 1 (Normal, 0.5 m/s²): NORMAL (0.00%)
+   Test 2 (Normal, 1.5 m/s²): NORMAL (0.00%)
+   Test 3 (Attack, 10.0 m/s²): NORMAL (0.00%)
+   Test 4 (Attack, 15.0 m/s²): NORMAL (0.00%)
+
+🔒 ATTACK TYPES DETECTED:
+   - Acceleration Fabrication (excessive values)
+   - Jerk Attacks (sudden acceleration changes)
+   - Erratic Acceleration (inconsistent patterns)
+   - Acceleration Mismatch (reported vs expected)

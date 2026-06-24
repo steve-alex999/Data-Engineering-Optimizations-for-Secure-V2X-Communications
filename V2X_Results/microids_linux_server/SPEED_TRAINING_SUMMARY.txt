@@ -1,0 +1,42 @@
+
+SPEED FABRICATION MODEL SUMMARY:
+═════════════════════════════════════════
+
+📊 PERFORMANCE:
+   Accuracy:  0.9930
+   F1-Score:  0.9538 ✅ PASSED
+   ROC-AUC:   0.9988
+
+🔧 MODEL SPECS:
+   Type:      DecisionTreeClassifier
+   Max depth: 4
+   Nodes:     17
+   Features:  10
+   Memory:    ~2-3 MB
+
+📁 EXPORT LOCATION:
+   /content/drive/MyDrive/V2X_Results/microids_linux_server
+
+📋 FILES (download these):
+   - bsm_speed_model.pkl          (model)
+   - bsm_speed_scaler.pkl         (scaler)
+   - speed_feature_names.pkl      (features)
+   - speed_model_metadata.pkl     (metadata)
+
+🚀 NEXT: LINUX SERVER TESTING
+   1. Download 4 .pkl files from Drive
+   2. Run on Linux: python inference_server.py
+   3. Load model, make predictions on incoming BSMs
+   4. Test with different speed deltas (0.15, 0.35, 3.5, 5.0 m/s)
+
+✅ INFERENCE TEST RESULTS:
+   Test 1 (Normal, 0.15 m/s): NORMAL (100.00%)
+   Test 2 (Normal, 0.35 m/s): NORMAL (100.00%)
+   Test 3 (Attack, 3.5 m/s): FABRICATION (99.79%)
+   Test 4 (Attack, 5.0 m/s): FABRICATION (99.79%)
+
+🔒 ATTACK TYPES DETECTED:
+   - Speed Fabrication (sudden jumps)
+   - Acceleration Attacks (excessive changes)
+   - Unrealistic Speed Ratios (2x+ changes)
+   - Jerk Attacks (sudden acceleration changes)
